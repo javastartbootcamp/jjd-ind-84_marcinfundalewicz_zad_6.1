@@ -6,25 +6,20 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Podaj liczbe");
-        int number = scanner.nextInt();
         int min = 100;
         int max = 200;
-        while (number % 3 != 0) {
+        int number;
+        do {
+            System.out.println("Podaj liczbe");
+            number = scanner.nextInt();
             if (number > max) {
                 System.out.println("Liczba jest za duza");
-                System.out.println("Podaj liczbe");
-                number = scanner.nextInt();
             } else if (number < min) {
                 System.out.println("Liczba jest za mala");
-                System.out.println("Podaj liczbe");
-                number = scanner.nextInt();
             } else if (number % 3 != 0) {
-                System.out.println("Liczba niejest podzielna przez 3");
-                System.out.println("Podaj liczbe");
-                number = scanner.nextInt();
+                System.out.println("Liczba nie jest podzielna przez 3");
             }
-        }
+        } while (number % 3 != 0 || (number < 100) || (number > 200));
         System.out.println("Twoja liczba jest ok");
     }
 }
