@@ -19,7 +19,7 @@ public class Main {
                 System.out.println("Liczba jest za mala");
             } else if (number % 3 != 0) {
                 System.out.println("Liczba nie jest podzielna przez 3");
-            } else if (number < max && number > min && number % 3 == 0) {
+            } else {
                 isIncorrect = false;
             }
         } while (isIncorrect);
