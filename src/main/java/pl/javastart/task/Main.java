@@ -6,9 +6,10 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int min = 100;
-        int max = 200;
+        final int min = 100;
+        final int max = 200;
         int number;
+        boolean isIncorrect = true;
         do {
             System.out.println("Podaj liczbe");
             number = scanner.nextInt();
@@ -18,8 +19,10 @@ public class Main {
                 System.out.println("Liczba jest za mala");
             } else if (number % 3 != 0) {
                 System.out.println("Liczba nie jest podzielna przez 3");
+            } else if (number < max && number > min && number % 3 == 0) {
+                isIncorrect = false;
             }
-        } while (number % 3 != 0 || (number < 100) || (number > 200));
+        } while (isIncorrect);
         System.out.println("Twoja liczba jest ok");
     }
 }
